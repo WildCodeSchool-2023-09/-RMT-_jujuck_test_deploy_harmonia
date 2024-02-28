@@ -7,23 +7,23 @@ DROP table if EXISTS user_cellar cascade;
 DROP table if EXISTS tasting cascade;
 
 create table users (
-  id auto_increment primary key not null,
-  email varchar(255) not null unique,
+  id int primary key auto_increment not null,
+  email varchar(255) unique not null,
   password varchar(255) not null
 );
 create table category (
-  id auto_increment primary key not null,
+  id int primary key auto_increment not null,
   name varchar(255) not null
 );
 
 create table drinks (
-  id auto_increment primary key not null,
+  id int primary key auto_increment not null,
   name varchar(255) not null,
-  barcode VARCHAR not null unique,
+  barcode VARCHAR(255) unique not null,
   category_id int not null,
   country varchar(255),
   degree int,
-  description text,
+  description longtext,
   year int,
   producer varchar(255),
   foreign key(category_id) references category(id)
@@ -38,7 +38,7 @@ create table user_cellar (
 );
 
 create Table tasting (
-  id auto_increment primary key not null,
+  id int primary key auto_increment not null,
   user_id int not null,
   drink_id int not null,
   note text,

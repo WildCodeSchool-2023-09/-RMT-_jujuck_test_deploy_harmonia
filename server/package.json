@@ -3,7 +3,7 @@
     "dev": "nodemon --ignore ./database/fixtures index.js",
     "db:migrate": "node ./bin/migrate.js",
     "db:seed": "node ./bin/seed.js",
-    "build": "node ./bin/migrate.js",
+    "build": "node ./bin/migrate.js && node ./bin/seed.js",
     "start": "node index.js",
     "test": "jest"
   },
@@ -14,7 +14,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
-    "pg": "^8.11.3"
+    "mysql2": "^3.9.2"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.3.1",

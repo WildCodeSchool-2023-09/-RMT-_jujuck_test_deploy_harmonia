@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="container m-4">
       <h1 className="text-center mb-5">
-        Bienvenu dans votre application Taste and share
+        Hello dans votre application Taste and share
       </h1>
       <h3 className="text-center m-3">
         Commencez dès maintenant en vous

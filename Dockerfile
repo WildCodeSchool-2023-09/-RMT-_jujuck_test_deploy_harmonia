@@ -16,12 +16,10 @@ COPY --link ./server/package.json ./server/package.json
 
 RUN cd client && \
     pnpm fetch && \
-    pnpm install && \
-    pnpm run build
+    pnpm install
 RUN cd server && \
     pnpm fetch && \
-    pnpm install && \
-    pnpm run build
+    pnpm install
 
 COPY ./client ./client
 

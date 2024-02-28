@@ -22,8 +22,12 @@ RUN cd server && \
     pnpm install
 
 COPY ./client ./client
+RUN cd client && \
+    npm run build
 
 COPY ./server ./server
+RUN cd server && \
+    npm run build
 
 COPY ./docker-entry.sh ./docker-entry.sh
 

@@ -11,7 +11,7 @@ const schema = path.join(__dirname, "..", "database", "schema.sql");
 const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
 
 // Update the database schema
-const { Pool } = require("pg");
+const mysql = require("mysql2/promise");
 
 const migrate = async () => {
   try {
@@ -19,12 +19,12 @@ const migrate = async () => {
     const sql = fs.readFileSync(schema, "utf8");
 
     // Create a specific connection to the database
-    const database = new Pool({
-      user: DB_USER,
+    const database = await mysql.createConnection({
       host: DB_HOST,
-      database: DB_NAME,
-      password: DB_PASSWORD,
       port: DB_PORT,
+      user: DB_USER,
+      password: DB_PASSWORD,
+      multipleStatements: true, // Allow multiple SQL statements
     });
 
     // Execute the SQL statements to update the database schema

@@ -23,16 +23,14 @@ router.use("/cellars", cellarsRouter);
 router.use("/tastings", tastingsRouter);
 
 router.use("", (req, res) => {
-  res
-    .status(200)
-    .send({
-      specifi:
-        process.env.TASTE_TEST_VARIABLE ||
-        "Echec de chargement de la variable d'environnement TASTE_TEST_VARIABLE.",
-      app_secret:
-        process.env.APP_SECRET ||
-        "Echo de chargement de la variable d'environnement APP_SECRET.",
-    });
+  res.status(200).send({
+    specifi:
+      process.env.TASTE_TEST_VARIABLE ||
+      "Echec de chargement de la variable d'environnement TASTE_TEST_VARIABLE.",
+    app_secret:
+      process.env.APP_SECRET ||
+      "Echo de chargement de la variable d'environnement APP_SECRET.",
+  });
 });
 
 /* ************************************************************************* */

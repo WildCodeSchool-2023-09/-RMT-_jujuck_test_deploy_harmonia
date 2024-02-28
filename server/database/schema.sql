@@ -7,17 +7,17 @@ DROP table if EXISTS user_cellar cascade;
 DROP table if EXISTS tasting cascade;
 
 create table users (
-  id serial primary key not null,
+  id auto_increment primary key not null,
   email varchar(255) not null unique,
   password varchar(255) not null
 );
 create table category (
-  id serial primary key not null,
+  id auto_increment primary key not null,
   name varchar(255) not null
 );
 
 create table drinks (
-  id serial primary key not null,
+  id auto_increment primary key not null,
   name varchar(255) not null,
   barcode VARCHAR not null unique,
   category_id int not null,
@@ -38,7 +38,7 @@ create table user_cellar (
 );
 
 create Table tasting (
-  id serial primary key not null,
+  id auto_increment primary key not null,
   user_id int not null,
   drink_id int not null,
   note text,

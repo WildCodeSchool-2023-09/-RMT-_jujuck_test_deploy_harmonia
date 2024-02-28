@@ -1,0 +1,33 @@
+.bg {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Wine_cellar.jpg/1200px-Wine_cellar.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.bg {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  label,
+  p,
+  li {
+    color: #fff;
+  }
+}
+
+.card {
+  h5,
+  p,
+  li {
+    color: black;
+  }
+}
+
+.home,
+.discovery {
+  height: 100vh;
+}

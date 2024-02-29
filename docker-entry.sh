@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-
+echo "Starting project"
 sleep 5
-cd ./backend && npm start
+cd ./server && npm start
 

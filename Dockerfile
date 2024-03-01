@@ -29,7 +29,6 @@ COPY ./server ./server
 RUN cd server && \
     npm run build
 
-COPY ./docker-entry.sh ./docker-entry.sh
-
+COPY docker-entry.sh .
 
 CMD ["sh","./docker-entry.sh"]

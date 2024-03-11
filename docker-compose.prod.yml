@@ -16,6 +16,7 @@ services:
       DB_PASSWORD: ${USER_PASSWORD}
       DB_NAME: ${DB_NAME}
       VITE_BACKEND_URL: ""
+      TASTE_TEST_VARIABLE: ${TASTE_TEST_VARIABLE}
     networks:
       - proxy
     labels:

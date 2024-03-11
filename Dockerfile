@@ -17,6 +17,7 @@ COPY --link ./server/package.json ./server/package.json
 RUN cd client && \
     pnpm fetch && \
     pnpm install
+
 RUN cd server && \
     pnpm fetch && \
     pnpm install
@@ -27,6 +28,7 @@ RUN cd client && \
     pnpm run build
 
 COPY ./server ./server
+
 COPY docker-entry.sh .
 
 CMD ["sh","./docker-entry.sh"]

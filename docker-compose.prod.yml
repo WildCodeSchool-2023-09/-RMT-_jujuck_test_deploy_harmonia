@@ -4,8 +4,10 @@ services:
   web:
     build: .
     container_name: ${PROJECT_NAME:-project}-web
-    volume:
-      - ./server/public:/usr/src/app/server/public:delegated
+    volumes:
+      - .:/var/www
+      - ./docker-entry.sh:/etc/entrypoint.sh
+    entrypoint: ["sh", "/etc/entrypoint.sh"]
     env_file:
       - ../envs/.env-${GITHUB_REPOSITORY_NAME}
     environment:

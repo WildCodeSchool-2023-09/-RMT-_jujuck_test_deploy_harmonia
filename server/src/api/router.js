@@ -24,12 +24,21 @@ router.use("/tastings", tastingsRouter);
 
 router.use("", (req, res) => {
   res.status(200).send({
-    specifi:
+    specific:
       process.env.TASTE_TEST_VARIABLE ||
       "Echec de chargement de la variable d'environnement TASTE_TEST_VARIABLE.",
     app_secret:
       process.env.APP_SECRET ||
       "Echo de chargement de la variable d'environnement APP_SECRET.",
+    argon_secret:
+      process.env.ARGON_SECRET ||
+      "Echec de chargement de la variable d'environnement ARGON_SECRET.",
+    user:
+      process.env.USER_NAME ||
+      "Echec de chargement de la variable d'environnement USER_NAME.",
+    host:
+      process.env.HOST ||
+      "Echec de chargement de la variable d'environnement HOST.",
   });
 });
 
